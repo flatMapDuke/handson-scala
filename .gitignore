@@ -1,0 +1,7 @@
+sbt-launch-0.12.2.jar
+.idea*
+project
+target
+.classpath
+.project
+.settings
