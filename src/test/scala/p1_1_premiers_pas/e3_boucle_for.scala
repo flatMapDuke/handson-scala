@@ -26,7 +26,7 @@ class e3_boucle_for extends HandsOnSuiteP1 {
   test("les boucles for peuvent contenir de la logique") {
     val quelqueNombres = Range(0, 10)
     var somme = 0
-    // somme des nombres entiers, seulement !
+    // somme des nombres pairs, seulement !
     for (i <- quelqueNombres) {
       if (i % 2 == 0) {
         somme += i
