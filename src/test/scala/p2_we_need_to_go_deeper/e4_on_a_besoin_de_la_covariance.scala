@@ -27,7 +27,7 @@ class e4_on_a_besoin_de_la_covariance extends HandsOnSuite {
 
     def map[B](fonction:A => B):Sac[B]
 
-    def flatMap[B](fonction:A => B):Sac[B]
+    def flatMap[B](fonction:A => Sac[B]):Sac[B]
 
     def filter(fonction:A => Boolean):Sac[A]
 
@@ -49,7 +49,7 @@ class e4_on_a_besoin_de_la_covariance extends HandsOnSuite {
 
     override def map[B](fonction:A => B):Sac[B]  = ???
 
-    override def flatMap[B](fonction:A => B):Sac[B]  = ???
+    override def flatMap[B](fonction:A => Sac[B]):Sac[B]  = ???
 
     override def filter(fonction:A => Boolean):Sac[A]  = ???
 
@@ -65,7 +65,7 @@ class e4_on_a_besoin_de_la_covariance extends HandsOnSuite {
 
     override def map[B](fonction:A => B):Sac[B]  = ???
 
-    override def flatMap[B](fonction:A => B):Sac[B]  = ???
+    override def flatMap[B](fonction:A => Sac[B]):Sac[B]  = ???
 
     override def filter(fonction:A => Boolean):Sac[A]  = ???
 
