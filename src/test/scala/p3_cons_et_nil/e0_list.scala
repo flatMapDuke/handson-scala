@@ -11,7 +11,7 @@ class e0_list extends HandsOnSuite {
 
     def map[B](fonction:A => B):List[B]
 
-    def flatMap[B](fonction:A => B):List[B]
+    def flatMap[B](fonction:A => List[B]):List[B]
 
     def filter(fonction:A => Boolean):List[A]
 
@@ -47,7 +47,7 @@ class e0_list extends HandsOnSuite {
     /**
      * l'implémentation de flatMap a besoin d'union
      */
-    def flatMap[B](fonction:A => B):List[B] = ???
+    def flatMap[B](fonction:A => List[B]):List[B] = ???
 
     def filter(fonction:A => Boolean):List[A] = ???
 
@@ -61,7 +61,7 @@ class e0_list extends HandsOnSuite {
 
     def map[B](fonction:A => B):List[B]  = ???
 
-    def flatMap[B](fonction:A => B):List[B] = Nil
+    def flatMap[B](fonction:A => List[B]):List[B] = Nil
 
     def filter(fonction:A => Boolean):List[A] = ???
   }
