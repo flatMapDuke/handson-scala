@@ -132,6 +132,6 @@ class e2_case_classes extends HandsOnSuiteP1{
     p3.age should be(0)
     p3.tel should be(__)
 
-    (p1 == p4) should be(__)
+    (p3 == p4) should be(__)
   }
 }
