@@ -63,15 +63,7 @@ class e1_bonus_stream extends HandsOnSuite {
 
     // ce mécanisme permet de garantir la lazyness de la queue de la stream
     // ainsi que la mémoization des valeurs accédées
-    @volatile private[this] var tlVal: Stream[A] = _
-    def tailDefined: Boolean = tlVal ne null
-    def tail: Stream[A] = {
-      if (!tailDefined)
-        synchronized {
-          if (!tailDefined) tlVal = tl
-        }
-      tlVal
-    }
+    lazy val tail:Stream[A] = tl
 
     def map[B](fonction:A => B):Stream[B] = new Cons(fonction(head), tail.map(fonction))
 
