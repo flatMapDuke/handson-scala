@@ -4,16 +4,21 @@ import support.HandsOnSuite
 import util.Random
 import scala.collection
 
-
+/*
+*   Maintenant que vous êtes un peu plus familier avec la syntaxe et que vous avez vu quelques 
+*   points clé de Scala, passons aux choses sérieuses avec ce premier exo...
+*
+*   Il faut implémenter les parties avec des ???
+*   mais avant cela il faut compléter les __ des tests en bas !
+*
+*/
 class e0_une_mise_en_abime /* ou un sac de sac */ extends HandsOnSuite {
-
-
 
   case class Sac(contenu:Int, tagDeSac:Set[String] = Set("gros sac")) {
 
     /**
-     * Certains appellent cette API : Functor , un mélange de terminator et de fonction.
-     * Ces gens là ont en général une barbe et font un peu de théorie de catégorie.
+     *  Certains appellent cette API : Functor , un mélange de terminator et de fonction.
+     *  Ces gens là ont en général une barbe et font un peu de théorie de catégories.
      *
      *
      * @param fonction la fonction a appliquer à contenu
@@ -22,17 +27,24 @@ class e0_une_mise_en_abime /* ou un sac de sac */ extends HandsOnSuite {
     def map(fonction:Int => Int):Sac = ???
 
 
-    /** Honnêtement, ce n'est pas le concept le plus simple */
-
-    /** mais il faut se lancer !!! :) */
-
-    /**
+    /**  Honnêtement, ce n'est pas le concept le plus simple mais il faut se lancer !!! :)
      *
-     * Les individus cités plus haut ont aussi un nom pour cette API : Bind.
-     * A croire que ces individus ont une recette miracle pour trouver des noms à tout.
+     *   Les individus cités plus haut ont aussi un nom pour cette API : Bind.
+     *   A croire que ces individus ont une recette miracle pour trouver des noms à tout.
      *
-     * @param fonction Hum hUm, la fonction à appliquer en fusionnant les contextes d'application (ici Sac) entre eux...
+     *  Tout d’abord un petit rappel sur la fonction flatten, puisque “flatmap” n’est rien 
+     *  d’autre que la combinaison des fonctions flatten et map.
+     *  L’opération 
+     *       List(List(1, 3), List(2, 4)).flatten 
+     *  
+     *  renvoie la liste List[Int] suivante
+     *       List(1, 3, 2, 4)
+     *  La méthode flatten s’applique en fait à une liste de listes, et l'applatir en une liste.
+     *
+     * @param fonction Hum hUm, la fonction à appliquer en fusionnant les contextes d'application 
+     (ici Sac) entre eux...
      * @return un Sac !
+     *
      */
     def flatMap(fonction:Int => Sac):Sac = {
       val res:Sac = ???
@@ -92,17 +104,12 @@ class e0_une_mise_en_abime /* ou un sac de sac */ extends HandsOnSuite {
 
     monPetitSacDeUn.contenu should be(1)
 
-
-
-
   }
 
+  /**
+  * Ce test se base sur la fonction flatMap a implémenter plus haut.
+  */
   test("je peux appliquer une expression imbriquée dans mes Sac") {
-
-    /**
-     * Ce test se base sur la fonction flatMap a implémenter plus haut.
-     */
-
 
     val monPetitSacDeDeux = Sac(2,Set("petit sac"))
     val monGrosSacDeCent = Sac(100, Set("gros sac"))
@@ -114,8 +121,6 @@ class e0_une_mise_en_abime /* ou un sac de sac */ extends HandsOnSuite {
      *
      * monPetitSacDeDeux.flatMap{ p => monGrosSacDeCent.map(g => p *g))
      */
-
-
     l_union_de_mes_sac.contenu should be(200)
 
     l_union_de_mes_sac.tagDeSac should be(Set("petit sac","gros sac"))

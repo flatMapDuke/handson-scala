@@ -12,7 +12,6 @@ class e1_un_peu_plus_generique  extends  HandsOnSuite {
 
   }
 
-
   test("Un peu comme avant, l'application de fonction dans le conteneur") {
     val petitSacDeZero = Sac(0,Set("petit sac"))
 

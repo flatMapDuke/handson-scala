@@ -5,12 +5,21 @@ import support.HandsOnSuite
 
 class e3_un_peu_plus_algebrique extends HandsOnSuite {
 
-
   /**
    * Un type algébrique (ici Sac) est un type composé ici par l'union disjointe de SacVide et SacPlein.
    * Cela veut dire que Sac est forcement un SacVide ou un SacPlein.
    */
 
+  /*
+  *   Alors là vous avez peut-être remarqué les mots sealed et trait :
+  *     - trait un le mot-clé utilisé pour définir une l'équivalent d'une interface en Java.
+  *       Il est cependant possible d'implémenter des méthodes dans un trait.
+  *
+  *     - sealed est un mot clé utilisé devant un trait. Le compilateur ne regardera que les case classes
+  *       étendant le trait présent dans ce fichier source là, et si des cas manquent lors du Pattern 
+  *       Matching, un warning est remonté.
+  * 
+  */
   sealed trait Sac {
 
     def tagDeSac:Set[String]
