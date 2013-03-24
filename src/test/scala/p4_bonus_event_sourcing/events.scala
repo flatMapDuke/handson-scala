@@ -43,6 +43,4 @@ package events {
 
   case class PostDeleted(postId: PostId) extends PostEvent
 
-
-
 }

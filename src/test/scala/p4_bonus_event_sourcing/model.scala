@@ -27,5 +27,4 @@ import p4_bonus_event_sourcing.events._
     def fromHistory(events: PostEvent*): Posts = events.foldLeft(Posts())(_ apply _)
   }
 
-
 }

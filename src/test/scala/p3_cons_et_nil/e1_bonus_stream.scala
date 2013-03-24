@@ -54,7 +54,8 @@ class e1_bonus_stream extends HandsOnSuite {
     }
   }
   /**
-   * Cons veut dire Constructor, c'est lui qui permet de construire la Streame en ajoutant un élément à la queue
+   * Cons veut dire Constructor, c'est lui qui permet de construire la Stream en ajoutant un élément 
+   * à la queue
    */
   final class Cons[A](val head:A, tl: => Stream[A]) extends  Stream[A] {
 

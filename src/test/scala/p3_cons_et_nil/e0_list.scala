@@ -84,7 +84,7 @@ class e0_list extends HandsOnSuite {
     List(1,2,3).union(List(4,5)) should be(List(1,2,3,4,5))
 
     List(1,2,3).union(List("A","B","C")) should be(List(1,2,3,"A","B","C"))
-    // Cet example est un peu complexe, le compilateur cherche un B pour l'union tel que
+    // Cet exemple est un peu complexe, le compilateur cherche un B pour l'union tel que
     // String <: B et A (ici Int) <: B
     // Le type qui convient est Any, l'équivalent de Object en Java
 
@@ -106,6 +106,4 @@ class e0_list extends HandsOnSuite {
 
     List(1,2,3).filter(x => false) should be(Nil)
   }
-
-
 }
