@@ -3,7 +3,7 @@ package p1_1_premiers_pas
 import support.HandsOnSuite
 
 /**
-*  Les for
+*  Les for, comprendre le 'for' classique et le 'for comprehension'.
 */
 
 class e3_boucle_for extends HandsOnSuiteP1 {
@@ -11,7 +11,9 @@ class e3_boucle_for extends HandsOnSuiteP1 {
 
   test("les for c'est assez simple") {
     //0, 1, 2, 3, 4, 5, 6, 7, 8, 9
-    val quelqueNombres = Range(0, 10)
+    val quelqueNombres = Range(0, 10) 
+    // n'hésitez pas à jouer avec l'interpréteur scala ouvert via 
+    // une autre console sbt pour aller voir ce qu'est un Range.
     var somme = 0
     for (i <- quelqueNombres) {
       somme += i
@@ -21,7 +23,7 @@ class e3_boucle_for extends HandsOnSuiteP1 {
   }
 
   /**
-  * on peut rajouter des conditions à l'intérieur des boucles
+  * On peut rajouter des conditions à l'intérieur des boucles
   */
   test("les boucles for peuvent contenir de la logique") {
     val quelqueNombres = Range(0, 10)
