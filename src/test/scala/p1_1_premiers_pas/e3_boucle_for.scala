@@ -4,6 +4,8 @@ import support.HandsOnSuite
 
 /**
 *  Les for, comprendre le 'for' classique et le 'for comprehension'.
+* 
+*  Les for sont applicable sur toutes collections.
 */
 
 class e3_boucle_for extends HandsOnSuiteP1 {
@@ -14,6 +16,8 @@ class e3_boucle_for extends HandsOnSuiteP1 {
     val quelqueNombres = Range(0, 10) 
     // n'hésitez pas à jouer avec l'interpréteur scala ouvert via 
     // une autre console sbt pour aller voir ce qu'est un Range.
+    // pour cela ouvrir une console et taper sbt. Puis pour lancer l'interpréteur scala, taper console.
+    // Vous pouvez ensuite écrire du code scala !
     var somme = 0
     for (i <- quelqueNombres) {
       somme += i
