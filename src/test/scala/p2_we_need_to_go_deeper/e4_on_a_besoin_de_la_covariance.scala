@@ -6,17 +6,18 @@ class e4_on_a_besoin_de_la_covariance extends HandsOnSuite {
 
   /**
    *
-   * La covariance est un mécanisme pour dire qu'un type paramêtrée varie de la même façon que son paramêtre.
+   *  La covariance est un mécanisme pour dire qu'un type paramétré varie de la même façon que son 
+   *  paramêtre.
    *
-   * Si A <: B  (cela veut dire que A est une sous classe de B)
-   * Et que Sac[A] est covariance sur A (Sac[+A])
-   * Alors Sac[A] <: Sac[B]
+   *  Si A <: B  (cela veut dire que A est une sous classe de B)
+   *  Et que Sac[A] est covariance sur A (Sac[+A])
+   *  Alors Sac[A] <: Sac[B]
    *
-   * Ce mécanisme est nécessaire ici pour définir le Sac Vide.
+   *  Ce mécanisme est nécessaire ici pour définir le Sac Vide.
    *
-   * Quelque soit A dans les types, Nothing <: A
-   * SacVide <: Sac[Nothing]
-   * alors SacVide <: Sac[A]
+   *  Quelque soit A dans les types, Nothing <: A
+   *  SacVide <: Sac[Nothing]
+   *  alors SacVide <: Sac[A]
    *
    *
    * @tparam A
@@ -77,7 +78,6 @@ class e4_on_a_besoin_de_la_covariance extends HandsOnSuite {
 
   }
 
-
   test("on peut ajouter des tags au sac") {
 
     val s0 = Sac(0)
@@ -90,7 +90,6 @@ class e4_on_a_besoin_de_la_covariance extends HandsOnSuite {
 
   }
 
-
   test("Un peu comme avant, l'application de fonction dans le conteneur") {
     val petitSacDeZero = Sac(0,Set("petit sac"))
 
@@ -101,9 +100,6 @@ class e4_on_a_besoin_de_la_covariance extends HandsOnSuite {
     }
 
   }
-
-
-
 
   test("La combinaison de Sac") {
 
