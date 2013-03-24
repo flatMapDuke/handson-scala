@@ -3,9 +3,11 @@ package p1_2_pas_suivant
 import p1_1_premiers_pas.HandsOnSuiteP1
 
 /**
-* Les Sets : 
-*   - http://www.scala-lang.org/api/current/index.html#scala.collection.immutable.Set
-*   - http://docs.scala-lang.org/overviews/collections/sets.html
+*   Un Set est une collection qui ne contient que des éléments distincts, comme en Java.
+*   
+*   Quelques liens :
+*     - http://www.scala-lang.org/api/current/index.html#scala.collection.immutable.Set
+*     - http://docs.scala-lang.org/overviews/collections/sets.html
 */ 
 
 class e6_sets extends HandsOnSuiteP1 {

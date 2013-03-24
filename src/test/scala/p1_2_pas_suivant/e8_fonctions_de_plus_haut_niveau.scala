@@ -3,27 +3,45 @@ package p1_2_pas_suivant
 import p1_1_premiers_pas.HandsOnSuiteP1
 
 /**
-* les fonctions de plus haut niveau
+*   Les fonctions de plus haut niveau.
+*
+*   Les fonctions d’ordre supérieur sont des fonctions qui peuvent prendre des fonctions 
+*   comme paramètre, et/ou peuvent retourner des fonctions.
+*   
+*   Par exemple : filter, map, flatmap...
+*
+*   Un peu de syntaxe sur les fonctions en général:
+*     - pour définir une fonction on utilise très souvent le mot clé def
+*     - on peut spécifier ou non le type de retour de la fonction en écrivant : puis le type de retour
+*           
+*           def addition(a: Int, b: Int): Int = a + b
+*     
+*     - pas besoin de return en Scala puisque la dernière expression est retournée par défaut !
+* 
 */
 class e8_fonctions_de_plus_haut_niveau extends HandsOnSuiteP1 {
 
   /**
-  * variable faisant référence à une fonction anonyme
+  *   Une variable peut faire référence à une fonction dite anonyme.
   *
-  * remarque : on peut aussi écrire la fonction lambda de cette façon avec les accolade:
+  *   Remarque : on peut aussi écrire la fonction lambda de cette façon avec les accolades,
+  *   ou s'en passer.
   *
-  * val lambda = {
-  *   x: Int => x + 1
-  * }
+  *   val lambda = {
+  *     x: Int => x + 1
+  *   }
   */
   test("Une fonction anonyme comme variable") {
-    val lambda = (x: Int) => x + 1
-    def result = List(1, 2, 3) map lambda
+    val lambda = (x: Int) => x + 1 //on peut définir une fonction/valeur avec le mot clé val ou def
+    def result = List(1, 2, 3) map lambda 
+    // le compilateur scala fait de l'inférence de type donc on peut se passer de préciser le type
+    // des variables que l'on définit
     result should be(__)
   }
 
   /**
-  * ça marche encore avec une 'vraie' fonction comme variable, c'est justement une des particularité des fonctions de plus haut niveau
+  *   ça marche encore avec une 'vraie' fonction comme variable, c'est justement l'une des 
+  *   particularités des fonctions de plus haut niveau
   */
   test("Variable qui fait référence à une fonction") {
     val lambda = new Function1[Int, Int] {
@@ -34,7 +52,7 @@ class e8_fonctions_de_plus_haut_niveau extends HandsOnSuiteP1 {
   }
 
   /**
-  * Avec une autre façon de définir la fonction lambda, passée en paramètre de map
+  *  Avec une autre façon de définir la fonction lambda, passée en paramètre de map
   */
   test("Encore une autre façon") {
     val lambda = new (Int => Int) {
@@ -44,8 +62,6 @@ class e8_fonctions_de_plus_haut_niveau extends HandsOnSuiteP1 {
     def result = List(1, 2, 3) map lambda
     result should be(__)
   }
-
-
 
   /**
   *  Les fonctions de plus haut niveau peuvent retourner des fonctions

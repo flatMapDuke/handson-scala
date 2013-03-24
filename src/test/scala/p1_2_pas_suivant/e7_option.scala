@@ -3,8 +3,23 @@ package p1_2_pas_suivant
 import p1_1_premiers_pas.HandsOnSuiteP1
 
 /**
-* Les options :
-*  - http://www.scala-lang.org/api/current/index.html#scala.Option
+*   Une Option comme sont nom l’indique représente une valeur optionnelle. 
+*   Une instance de Option est soit une instance de Some soit de None 
+*   (None dans le cas où il n’y a aucune valeur).
+*
+*   Exemple :
+*   Imaginons que l’on veuille trouver une personne dans une BDD. Elle n’existe peut-être pas. 
+*   Dans ce cas en Scala on écrira :
+*
+*       def findPerson(key: Int): Option[Person]
+*
+*   Ca permet de dire que si la personne n’est pas trouvée, alors on renvoie None et non un 'null'
+*   comme dans d’autres langages.
+*   Le type Option permet donc de traiter des cas pour lesquels aucun résultat n’existe, 
+*   et de se prémunir des NPE/absence de valeur.
+*
+*   Quelques liens :
+*     - http://www.scala-lang.org/api/current/index.html#scala.Option
 */
 
 class e7_option extends HandsOnSuiteP1 {
@@ -17,7 +32,7 @@ class e7_option extends HandsOnSuiteP1 {
 
   test("None est identique à None") {
     val a = None
-    // ici ed dénote le fait d'être identique, et == l'égalité
+    
     a should be(__)
   }
 
@@ -52,7 +67,7 @@ class e7_option extends HandsOnSuiteP1 {
     optional.isEmpty should be(__)
   }
 
-  test("Option.getOrElse can be used to provide a default in the case of None") {
+  test("Option.getOrElse peut-être utilisé pour fournir un comportement par défaut si on obtient un None") {
     val optional: Option[String] = Some("Some Value")
     val optional2: Option[String] = None
     optional.getOrElse("No Value") should be(__)
